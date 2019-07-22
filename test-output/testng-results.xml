@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="AutomationSuite" duration-ms="56333" started-at="2019-07-22T07:17:01Z" finished-at="2019-07-22T07:17:57Z">
+    <groups>
+    </groups>
+    <test name="AutomationTest" duration-ms="56333" started-at="2019-07-22T07:17:01Z" finished-at="2019-07-22T07:17:57Z">
+      <class name="LoginPageTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:LoginPageTest@5f9d02cb]" name="setup" is-config="true" duration-ms="37723" started-at="2019-07-22T07:17:01Z" finished-at="2019-07-22T07:17:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="CreateIndividual_Test()[pri:0, instance:LoginPageTest@5f9d02cb]" name="CreateIndividual_Test" duration-ms="18485" started-at="2019-07-22T07:17:38Z" finished-at="2019-07-22T07:17:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateIndividual_Test -->
+      </class> <!-- LoginPageTest -->
+    </test> <!-- AutomationTest -->
+  </suite> <!-- AutomationSuite -->
+</testng-results>

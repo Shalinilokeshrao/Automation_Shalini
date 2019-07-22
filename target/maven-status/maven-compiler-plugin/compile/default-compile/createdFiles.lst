@@ -1,0 +1,6 @@
+Framework\ExtentReportManager.class
+Framework\baseclass.class
+Framework\GenericMethods.class
+Framework\LocatorUtils.class
+Framework\CommonUtil.class
+Pages\LoginPage.class
