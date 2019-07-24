@@ -149,7 +149,7 @@ public class CommonUtil {
     {
         TakesScreenshot ts = (TakesScreenshot)this.driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        String dest = System.getProperty("user.dir")+"/Reports/screenshots/"+screenShotName+System.currentTimeMillis()+".png";
+        String dest = System.getProperty("user.dir")+"/Reports/"+"screenshots/"+screenShotName+System.currentTimeMillis()+".png";
         File destination = new File(dest);
         FileUtils.copyFile(source, destination);
 

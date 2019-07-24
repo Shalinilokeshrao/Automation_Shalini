@@ -12,6 +12,7 @@ public class LocatorUtils {
     public static By getLocator(String locator) throws Exception {
         String locatorType = locator.split("\\|\\|")[0];
         String locatorValue = locator.split("\\|\\|")[1];
+        //String locatorVal = locator.split("||")[1];
         if (locatorType.toLowerCase().equals("id")) {
             return By.id(locatorValue);
         } else if (locatorType.toLowerCase().equals("name")) {

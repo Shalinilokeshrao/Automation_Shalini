@@ -1,23 +1,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="AutomationSuite">
 
-    <parameter name="FirstName" value="Poonam343"/>
 
-    <parameter name="LastName" value="Gy343"/>
+    <test name="Valid_Test">
+        <parameter name="username" value="admin@yourstore.com"/>
 
-    <parameter name="UserName" value="poonamvg"/>
-
-    <parameter name="Password" value="pwd"/>
-    <parameter name="Role" value="Admin"/>
-    <parameter name="Email" value="Customer@mail.com"/>
-
-    <parameter name="Cell" value="1234546"/>
-    <test name="AutomationTest">
-
+        <parameter name="password" value="admin"/>
         <classes>
             <class name="LoginPageTest"></class>
+        </classes>
+    </test>
 
+    <test name="InValid_Test">
+        <parameter name="username" value="admin@yourstore.com"/>
 
+        <parameter name="password" value="admin12345"/>
+        <classes>
+            <class name="LoginPageTest"></class>
         </classes>
     </test>
 </suite>

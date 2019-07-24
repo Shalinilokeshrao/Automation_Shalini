@@ -6,8 +6,7 @@ import Pages.LoginPage;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -23,9 +22,9 @@ public class LoginPageTest extends baseclass {
    public static final String TAKE_SCREEN_SHOT="./screenshots/";
     String[] stringShotName;
     String Attachpath;
-    @BeforeClass
+    @BeforeTest
     public void setup() {
-        LaunchBrowser("http://admin-demo.nopcommerce.com/login");
+        LaunchBrowser(prop.getProperty("http://admin-demo.nopcommerce.com/login"));
         driver.switchTo().defaultContent();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -37,23 +36,24 @@ public class LoginPageTest extends baseclass {
     }
 
     @Test
-    public void CreateIndividual_Test() throws Exception {
+    @Parameters({"username","password"})
+    public void CreateIndividual_Test(String user,String pass) throws Exception {
      test=extent.startTest("Login");
-        commonUtil.typeOnElement(LoginObj.username,"admin@yourstore.com");
-        commonUtil.typeOnElement(LoginObj.password,"admin");
+        //commonUtil.typeOnElement(LoginObj.username,prop.getProperty("username"));
+        //commonUtil.typeOnElement(LoginObj.password,prop.getProperty("password"));
+        commonUtil.typeOnElement(LoginObj.username,user);
+        commonUtil.typeOnElement(LoginObj.password,pass);
         commonUtil.clickOnElement(LoginObj.LoginBtn);
-        String Imagepath=commonUtil.captureScreenshot("Login Check");
+        String Imagepath=commonUtil.ScreenShot("Login Check");
         System.out.println(Imagepath);
-       // File ScreenPath=new File(Imagepath);
-        stringShotName=Imagepath.split("\\\\");
-        String file = System.getProperty("user.dir")+"/screenshots/"+stringShotName[4];
+        stringShotName=Imagepath.split("/");
+        System.out.println(TAKE_SCREEN_SHOT+stringShotName[3]);
+        test.log(LogStatus.INFO, "Login Screenshot test" + test.addScreenCapture(TAKE_SCREEN_SHOT+stringShotName[3]));
 
-        System.out.println(file);
-
-        test.log(LogStatus.INFO, "Login Screenshot test" + test.addScreenCapture(file));
-        System.out.println("*********");
-        System.out.println(TAKE_SCREEN_SHOT+stringShotName[4]);
-        test.log(LogStatus.INFO, "Login Screenshot test" + test.addScreenCapture(TAKE_SCREEN_SHOT+stringShotName[4]));
+    }
+    @AfterTest
+    public void teardown(){
         extent.flush();
+        driver.quit();
     }
 }
