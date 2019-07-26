@@ -24,7 +24,7 @@ public class LoginPageTest extends baseclass {
     String Attachpath;
     @BeforeTest
     public void setup() {
-        LaunchBrowser(prop.getProperty("http://admin-demo.nopcommerce.com/login"));
+        LaunchBrowser("http://admin-demo.nopcommerce.com/login");
         driver.switchTo().defaultContent();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
