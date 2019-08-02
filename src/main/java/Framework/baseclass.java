@@ -27,7 +27,7 @@ public class baseclass {
     public static void LaunchBrowser(String AplicationURL){
         String browsername=prop.getProperty("browser");
         if(browsername.equals("chrome")){
-            System.setProperty("webdriver.chrome.driver","D:\\Project\\CIES_Framework\\Driver\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver","C:\\Users\\Vithun\\IdeaProjects\\CIES_Framework\\Driver\\chromedriver.exe");
             driver=new ChromeDriver();
         }else if(browsername.equals("FF")){
             System.setProperty("webdriver.gecko.driver","C:\\Users\\Vithun\\IdeaProjects\\Functional\\src\\main\\resources\\drivers\\chromedriver.exe");

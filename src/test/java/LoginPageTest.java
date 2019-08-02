@@ -49,7 +49,7 @@ public class LoginPageTest extends baseclass {
         stringShotName=Imagepath.split("/");
         System.out.println(TAKE_SCREEN_SHOT+stringShotName[3]);
         test.log(LogStatus.INFO, "Login Screenshot test" + test.addScreenCapture(TAKE_SCREEN_SHOT+stringShotName[3]));
-
+//1877000
     }
     @AfterTest
     public void teardown(){
